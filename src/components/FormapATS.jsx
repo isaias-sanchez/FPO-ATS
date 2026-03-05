@@ -664,7 +664,7 @@ export default function FormapATS() {
             html2canvas: {
                 scale: 2,
                 useCORS: true,
-                onclone: (clonedDoc) => {
+                onclone: async (clonedDoc) => {
                     const style = clonedDoc.createElement('style');
                     style.innerHTML = `
                         #ats-print-view { background-color: #ffffff !important; color: #333333 !important; }
@@ -702,21 +702,44 @@ export default function FormapATS() {
                     `;
                     clonedDoc.head.appendChild(style);
 
-                    // Reemplazamos cualquier declaración CSS que use oklch por nada (la borramos)
-                    // para evitar el crash Attempting to parse an unsupported color function `oklch`
+                    // Función para eliminar declaraciones oklch de texto CSS
                     const stripOklch = (text) => text.replace(/([a-zA-Z0-9-]+)\s*:\s*([^;}]*oklch[^;}]*)(;|\})/gi, (m, prop, val, end) => end === '}' ? '}' : '');
 
+                    // 1. Limpiar <style> tags en el documento clonado
                     clonedDoc.querySelectorAll('style').forEach(s => {
                         if (s.textContent && s.textContent.includes('oklch')) {
                             s.textContent = stripOklch(s.textContent);
                         }
                     });
+
+                    // 2. Limpiar estilos inline de elementos
                     clonedDoc.querySelectorAll('[style]').forEach(el => {
                         const styleAttr = el.getAttribute('style');
                         if (styleAttr && styleAttr.includes('oklch')) {
                             el.setAttribute('style', stripOklch(styleAttr));
                         }
                     });
+
+                    // 3. Reemplazar hojas de estilos externas (<link rel="stylesheet">)
+                    //    con <style> inline con oklch removido (esto resuelve el crash en Vercel/producción)
+                    const linkEls = Array.from(clonedDoc.querySelectorAll('link[rel="stylesheet"]'));
+                    await Promise.all(linkEls.map(async (link) => {
+                        try {
+                            const href = link.href;
+                            if (!href) return;
+                            const res = await fetch(href);
+                            let cssText = await res.text();
+                            if (cssText.includes('oklch')) {
+                                cssText = stripOklch(cssText);
+                            }
+                            const inlineStyle = clonedDoc.createElement('style');
+                            inlineStyle.textContent = cssText;
+                            link.parentNode.replaceChild(inlineStyle, link);
+                        } catch (e) {
+                            // Si no se puede cargar la hoja, simplemente la eliminamos
+                            link.remove();
+                        }
+                    }));
                 }
             },
             jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
