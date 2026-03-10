@@ -72,38 +72,24 @@ const MATRIZ_AMBIENTAL = [
 const RIESGOS_BENTO = [
     {
         id: 'biologicos',
-        titulo: 'Biológicos',
+        titulo: 'Biológico',
         iconKey: 'biologico',
         colorClass: 'green',
-        items: ['Mordedura y picadura de animales', 'Virus - Bacterias', 'Exposición a fluidos corporales'],
-        metodosControl: ['Análisis de la zona de trabajo', 'Evitar el contacto con animales', 'Evitar el uso de perfumes dulces', 'Lavado de manos', 'Uso de tapabocas si presenta síntomas', 'Consumo de agua tratada'],
+        items: [
+            { nombre: 'Mordedura y picadura de animales', controles: ['Análisis de la zona de trabajo', 'Evitar el contacto con animales', 'Evitar el uso de perfumes dulces'] },
+            { nombre: 'Virus - Bacterias', controles: ['Lavado de manos', 'Uso de tapabocas si presenta síntomas', 'Consumo de agua tratada'] }
+        ],
         colSpan: 'md:col-span-1'
     },
     {
         id: 'fisicos',
-        titulo: 'Físicos',
+        titulo: 'Físico',
         iconKey: 'fisico',
         colorClass: 'sky',
-        items: ['Radiaciones no ionizantes (Exposición a sol)', 'Ruido', 'Iluminación deficiente', 'Temperaturas extremas (Calor/Frío)'],
-        metodosControl: ['Hidratación constante', 'Uso de dotación manga larga', 'Disminuir tiempo de exposición al sol', 'Uso de protección auditiva (inserción o copa)'],
-        colSpan: 'md:col-span-1'
-    },
-    {
-        id: 'mecanicos',
-        titulo: 'Mecánicos / Seguridad',
-        iconKey: 'mecanico',
-        colorClass: 'orange',
-        items: ['Trabajo en Alturas (>2m)', 'Manejo de herramientas manuales/potencia', 'Caída de objetos por manipulación', 'Superficies resbaladizas o irregulares'],
-        metodosControl: ['Selección de herramienta adecuada para la tarea', 'Uso de herramientas en buen estado', 'Uso de EPP adecuados en buen estado', 'Uso de barreras de protección', 'Inspección de los ECC (Equipos Contra Caída)', 'Uso adecuado de los ECC', 'Diligenciar permiso de trabajo', 'Diligenciar lista de chequeo TSA', 'Instalación adecuada del equipo de rescate'],
-        colSpan: 'md:col-span-2'
-    },
-    {
-        id: 'electrico',
-        titulo: 'Eléctrico',
-        iconKey: 'electrico',
-        colorClass: 'yellow',
-        items: ['Contacto Alta Tensión', 'Contacto Baja Tensión', 'Arco Eléctrico / Estática'],
-        metodosControl: ['Identificar el nivel de tensión a intervenir', 'Seleccionar equipos y herramientas adecuados', 'Inspeccionar equipos y EPP dieléctricos', 'Uso de guantes adecuados al nivel de tensión', 'Uso de dotación ignífuga', 'Uso de careta Arc Flash', 'Respetar distancias de seguridad', 'Cumplimiento de las 5 RO'],
+        items: [
+            { nombre: 'Radiaciones no ionizantes (Exposición a sol)', controles: ['Hidratación constante', 'Uso de dotación manga larga', 'Disminuir tiempo de exposición al sol'] },
+            { nombre: 'Ruido', controles: ['Uso de protección auditiva, inserción o copa'] }
+        ],
         colSpan: 'md:col-span-1'
     },
     {
@@ -111,8 +97,10 @@ const RIESGOS_BENTO = [
         titulo: 'Psicosocial',
         iconKey: 'psicosocial',
         colorClass: 'amber',
-        items: ['Condiciones de la tarea', 'Grupo de trabajo / Relaciones interpersonales', 'Estrés laboral'],
-        metodosControl: ['Organización del tiempo', 'Cumplimiento del procedimiento', 'Trabajo en equipo', 'Respeto y trato cordial'],
+        items: [
+            { nombre: 'Condiciones de la tarea', controles: ['Organización del tiempo', 'Cumplimiento del procedimiento'] },
+            { nombre: 'Grupo de trabajo', controles: ['Trabajo en equipo', 'Respeto y trato cordial'] }
+        ],
         colSpan: 'md:col-span-1'
     },
     {
@@ -120,35 +108,71 @@ const RIESGOS_BENTO = [
         titulo: 'Biomecánico',
         iconKey: 'biomecanico',
         colorClass: 'sky',
-        items: ['Manipulación manual de cargas', 'Postura prolongada', 'Movimientos repetitivos'],
-        metodosControl: ['No levantar más del peso permitido', 'Distribuir la carga', 'Realizar pausas activas', 'Tomar posturas adecuadas'],
+        items: [
+            { nombre: 'Manipulación manual de cargas', controles: ['No levantar más del peso permitido', 'Distribuir la carga'] },
+            { nombre: 'Postura prolongada', controles: ['Realizar pausas activas', 'Tomar posturas adecuadas'] }
+        ],
+        colSpan: 'md:col-span-1'
+    },
+    {
+        id: 'mecanicos',
+        titulo: 'Mecánico',
+        iconKey: 'mecanico',
+        colorClass: 'orange',
+        items: [
+            { nombre: 'Selección de herramienta adecuada para la tarea', controles: ['Uso de herramientas en buen estado'] },
+            { nombre: 'Uso de EPP adecuados en buen estado para la tarea', controles: ['Uso de barreras de protección'] }
+        ],
+        colSpan: 'md:col-span-1'
+    },
+    {
+        id: 'electrico',
+        titulo: 'Eléctrico',
+        iconKey: 'electrico',
+        colorClass: 'yellow',
+        items: [
+            { nombre: 'Identificar el nivel de tensión a intervenir', controles: ['Seleccionar los equipos y herramientas adecuados', 'Inspeccionar los equipos y EPP dieléctricos', 'Uso de guantes adecuados al nivel de tensión', 'Uso de dotación ignífuga', 'Uso de careta Arc Flash', 'Respetar distancias de seguridad', 'Cumplimiento de las 5 RO'] }
+        ],
         colSpan: 'md:col-span-1'
     },
     {
         id: 'locativo',
-        titulo: 'Locativo',
+        titulo: 'Condiciones de Seguridad - Locativo',
         iconKey: 'locativo',
         colorClass: 'orange',
-        items: ['Superficies / pisos en mal estado', 'Orden y aseo deficiente', 'Señalización insuficiente'],
-        metodosControl: ['Análisis de la zona de trabajo', 'Señalizar zonas de trabajo y desniveles', 'Caminar por zonas seguras', 'Usar calzado adecuado para la labor', 'Respetar las señalizaciones del entorno'],
+        items: [
+            { nombre: 'Análisis de la zona de trabajo', controles: ['Señalizar las zonas de trabajo y desniveles', 'Caminar por zonas seguras', 'Usar calzado adecuado para la labor', 'Respetar las señalizaciones del entorno'] }
+        ],
         colSpan: 'md:col-span-1'
     },
     {
         id: 'transito',
-        titulo: 'Accidentes de Tránsito',
+        titulo: 'Accidentes de tránsito',
         iconKey: 'transito',
         colorClass: 'yellow',
-        items: ['Desplazamiento en vehículo', 'Cruce de vías / peatonal', 'Conducción en zona de obra'],
-        metodosControl: ['Inspección preoperacional del vehículo', 'No exceder los límites de velocidad establecidos', 'Respetar las señalizaciones en la vía', 'Cumplimiento de las normas de tránsito', 'Uso obligatorio del cinturón', 'No usar equipos celulares o distracciones', 'Aplicar normas de manejo defensivo', 'Mantener la concentración en la vía'],
+        items: [
+            { nombre: 'Inspección preoperacional del vehículo', controles: ['No exceder los límites de velocidad establecidos', 'Respetar las señalizaciones en la vía', 'Cumplimiento de las normas de tránsito', 'Uso obligatorio del cinturón', 'No usar equipos celulares o distracciones bidireccionales', 'Aplicar normas de manejo defensivo', 'Mantener la concentración en la vía'] }
+        ],
         colSpan: 'md:col-span-1'
     },
     {
         id: 'publico',
-        titulo: 'Riesgo Público',
+        titulo: 'Público',
         iconKey: 'publico',
         colorClass: 'blue',
-        items: ['Atraco / hurto', 'Alteración de orden público', 'Confrontación con terceros'],
-        metodosControl: ['Ante un atraco o asalto no colocar resistencia', 'Aplicar técnicas de manejo de emociones', 'Mantener un trato cordial hacia los usuarios', 'Evitar confrontaciones con terceros'],
+        items: [
+            { nombre: 'Ante un atraco, asalto o similares no colocar resistencia', controles: ['Aplicar técnicas de manejo de emociones', 'Mantener un trato cordial hacia los usuarios', 'Evitar confrontaciones con terceros'] }
+        ],
+        colSpan: 'md:col-span-1'
+    },
+    {
+        id: 'alturas',
+        titulo: 'Trabajo en Alturas (>2m)',
+        iconKey: 'mecanico',
+        colorClass: 'orange',
+        items: [
+            { nombre: 'Realizar inspección de los ECC (Equipos Contra Caída)', controles: ['Uso adecuado de los ECC', 'Diligenciar permiso de trabajo', 'Diligenciar lista de chequeo de TSA (Trabajo Seguro en Alturas)', 'Instalación adecuada del equipo de rescate'] }
+        ],
         colSpan: 'md:col-span-1'
     },
     {
@@ -156,17 +180,20 @@ const RIESGOS_BENTO = [
         titulo: 'Tecnológicos',
         iconKey: 'tecnologico',
         colorClass: 'green',
-        items: ['Incendio / explosión', 'Derrame de sustancias', 'Fallo de equipos y maquinaria'],
-        metodosControl: ['Validar que se cuenta con extintor vigente y recargado'],
+        items: [
+            { nombre: 'Fallo y emergencias', controles: ['Validar que se cuenta con extintor vigente y recargado'] }
+        ],
         colSpan: 'md:col-span-1'
     },
     {
         id: 'naturales',
-        titulo: 'Fenómenos Naturales',
+        titulo: 'Fenómenos naturales',
         iconKey: 'natural',
         colorClass: 'blue',
-        items: ['Lluvias / Inundaciones', 'Sismos / Terremotos / Deslizamientos'],
-        metodosControl: ['Suspender actividades por prevención', 'Aplicar técnicas de evacuación'],
+        items: [
+            { nombre: 'Lluvias, inundaciones, etc.', controles: ['Suspender actividades por prevención'] },
+            { nombre: 'Sismos, terremotos, deslizamientos, etc.', controles: ['Aplicar técnicas de evacuación'] }
+        ],
         colSpan: 'md:col-span-1'
     }
 ];
@@ -213,7 +240,7 @@ export default function FormapATS() {
         departamento: 'Atlántico', municipio: '', lugarTrabajo: '',
         consignacion: null, permisos: null, permisosDetalle: '',
         // Paso 2
-        epp: { casco: null, gafas: null, auditiva: null, respiratoria: null, guantes: null, botas: null, ropa: null, mangas: null, arnes: null },
+        epp: { casco: { estado: 'ok', novedad: '' }, gafas: { estado: 'ok', novedad: '' }, auditiva: { estado: 'ok', novedad: '' }, respiratoria: { estado: 'ok', novedad: '' }, guantes: { estado: 'ok', novedad: '' }, botas: { estado: 'ok', novedad: '' }, ropa: { estado: 'ok', novedad: '' }, mangas: { estado: 'ok', novedad: '' }, arnes: { estado: 'ok', novedad: '' } },
         documentosBasicos: {},      // { [item.text]: 'C' | 'NC' | 'NA' }
         // Paso 3
         riesgos: [], observaciones: '',
@@ -286,15 +313,13 @@ export default function FormapATS() {
 
     const handleEppClick = (itemKey) => {
         const current = formData.epp[itemKey];
-        if (!current || !current.estado) {
+        if (!current || !current.estado || current.estado === 'na') {
             handleEppChange(itemKey, { estado: 'ok', novedad: '' });
         } else if (current.estado === 'ok') {
             handleEppChange(itemKey, { estado: 'novedad', novedad: '' });
             setNovedadModal({ isOpen: true, itemKey });
         } else if (current.estado === 'novedad') {
             handleEppChange(itemKey, { estado: 'na', novedad: '' });
-        } else if (current.estado === 'na') {
-            handleEppChange(itemKey, null);
         }
     };
 
@@ -340,10 +365,10 @@ export default function FormapATS() {
             }
         }));
 
-    const toggleMetodoControl = (bloqueId, metodo) => {
-        const current = formData.riesgosControles[bloqueId]?.metodosControl || [];
+    const toggleMetodoControl = (descripcionId, metodo) => {
+        const current = formData.riesgosControles[descripcionId]?.metodosControl || [];
         const updated = current.includes(metodo) ? current.filter(m => m !== metodo) : [...current, metodo];
-        handleRiesgoControlChange(bloqueId, 'metodosControl', updated);
+        handleRiesgoControlChange(descripcionId, 'metodosControl', updated);
     };
 
     const toggleImpacto = (aspecto, impacto) => {
@@ -603,70 +628,83 @@ export default function FormapATS() {
             sky: { text: 'text-sky-500', bg: 'bg-sky-500/10', light: 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-white hover:border-sky-400 hover:shadow-sm', active: 'bg-sky-500 text-white border-sky-500 shadow-[0_4px_12px_rgba(14,165,233,0.3)]' }
         };
         const theme = colorMap[bloque.colorClass] || colorMap.blue;
-        const selectedCount = bloque.items.filter(item => formData.riesgos.includes(item)).length;
-        const blockData = formData.riesgosControles[bloque.id] || {};
+        // Cuenta descripciones seleccionadas basadas en si el formData.riesgos las tiene incluidas
+        const selectedCount = bloque.items.filter(item => formData.riesgos.includes(item.nombre)).length;
 
         return (
             <div className={`bg-white p-5 rounded-3xl border border-slate-100 shadow-sm flex flex-col gap-4 ${bloque.colSpan} relative overflow-hidden`}>
-                <div className="flex items-center gap-3 relative z-10">
+                <div className="flex items-center gap-3 relative z-10 border-b border-slate-100 pb-3 mb-1">
                     <div className={`p-2.5 rounded-xl ${theme.bg}`}>
                         <DynamicIcon type="risk" iconKey={bloque.iconKey} className={`w-6 h-6 ${theme.text}`} />
                     </div>
                     <div>
-                        <h3 className="font-extrabold text-ises-dark text-lg leading-tight">{bloque.titulo}</h3>
+                        {/* El nombre del Riesgo */}
+                        <h3 className="font-extrabold text-ises-dark text-lg leading-tight uppercase">{bloque.titulo}</h3>
                         <p className="text-xs font-bold text-slate-400 mt-0.5">
-                            {selectedCount} Seleccionados
+                            {selectedCount} Tareas Seleccionadas
                         </p>
                     </div>
                 </div>
 
-                <div className="flex flex-wrap gap-2 relative z-10">
-                    {bloque.items.map(item => {
-                        const isSelected = formData.riesgos.includes(item);
+                {/* Sub-bloques (Descripciones) seleccionables */}
+                <div className="flex flex-col gap-3 relative z-10 overflow-visible">
+                    {bloque.items.map((item, idx) => {
+                        const isSelected = formData.riesgos.includes(item.nombre);
+                        const itemId = `${bloque.id}_${idx}`;
+                        const metodosControlSeleccionados = formData.riesgosControles[itemId]?.metodosControl || [];
+
                         return (
-                            <button key={item}
-                                onClick={() => toggleRiesgo(item)}
-                                className={`text-left text-xs font-bold px-3 py-2 rounded-xl border-2 transition-all duration-300 flex items-center gap-2
-                                    ${isSelected ? theme.active : theme.light} flex-grow sm:flex-grow-0`}>
-                                {isSelected ? <span><Check className="w-3.5 h-3.5" strokeWidth={3} /></span> : null}
-                                <span>{item}</span>
-                            </button>
+                            <div key={idx} className="flex flex-col gap-2">
+                                <button
+                                    onClick={() => toggleRiesgo(item.nombre)}
+                                    className={`text-left text-xs font-bold px-4 py-3.5 rounded-xl border-2 transition-all duration-300 flex items-center justify-between gap-3 shadow-sm
+                                        ${isSelected ? theme.active : theme.light}`}>
+                                    <span className="leading-snug">{item.nombre}</span>
+                                    <div className="flex items-center gap-2 flex-shrink-0">
+                                        {isSelected && metodosControlSeleccionados.length > 0 && (
+                                            <span className="bg-white/20 text-white px-2 py-0.5 rounded-full text-[10px] backdrop-blur-sm border border-white/30 hidden sm:inline-block">
+                                                {metodosControlSeleccionados.length} Controles
+                                            </span>
+                                        )}
+                                        {isSelected ? <Check className="w-5 h-5 text-white" strokeWidth={3} /> : <div className="w-4 h-4 rounded-full border border-slate-300 opacity-50" />}
+                                    </div>
+                                </button>
+
+                                {/* Despliegue de los métodos de control si la descripción está seleccionada */}
+                                {isSelected && item.controles && item.controles.length > 0 && (
+                                    <div className="bg-slate-50/50 rounded-xl border border-slate-100 p-4 -mt-1 mx-1 shadow-inner animate-in fade-in slide-in-from-top-2 duration-300">
+                                        <div className="flex justify-between items-center mb-3">
+                                            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1.5 focus:outline-none">
+                                                <ShieldAlert className="w-3.5 h-3.5" /> Métodos de control a aplicar
+                                            </p>
+                                        </div>
+                                        <div className="flex flex-col gap-2.5">
+                                            {item.controles.map(control => {
+                                                const isControlSelected = metodosControlSeleccionados.includes(control);
+                                                return (
+                                                    <label key={control} className={`flex items-start gap-3 p-3 rounded-xl cursor-pointer group transition-all duration-200 border border-transparent 
+                                                        ${isControlSelected ? 'bg-white shadow-[0_2px_8px_rgba(0,0,0,0.04)] border-slate-200 scale-[1.01]' : 'hover:bg-white hover:border-slate-200'}`}>
+                                                        <div className="relative flex items-center justify-center mt-0.5 flex-shrink-0">
+                                                            <input type="checkbox"
+                                                                className="peer appearance-none w-5 h-5 border-2 border-slate-300 rounded focus:ring-2 focus:ring-ises-green focus:ring-offset-1 checked:bg-ises-green checked:border-ises-green transition-all"
+                                                                checked={isControlSelected}
+                                                                onChange={() => toggleMetodoControl(itemId, control)} />
+                                                            <Check className="absolute w-3 h-3 text-white opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity" strokeWidth={4} />
+                                                        </div>
+                                                        <span className={`text-xs font-semibold select-none transition-colors mt-0.5 leading-snug 
+                                                            ${isControlSelected ? 'text-ises-dark' : 'text-slate-500 group-hover:text-ises-dark'}`}>
+                                                            {control}
+                                                        </span>
+                                                    </label>
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
                         );
                     })}
                 </div>
-
-                {/* Descripción + Métodos de control (aparece cuando hay ítems seleccionados) */}
-                {selectedCount > 0 && (
-                    <div className="border-t border-slate-100 pt-3 space-y-3 relative z-10">
-                        <div>
-                            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Descripción del riesgo</label>
-                            <textarea
-                                rows={2}
-                                placeholder="Describe las condiciones del riesgo identificado..."
-                                value={blockData.descripcion || ''}
-                                onChange={e => handleRiesgoControlChange(bloque.id, 'descripcion', e.target.value)}
-                                className="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium text-ises-dark resize-none outline-none focus:ring-2 focus:ring-ises-green/40 focus:border-ises-green/40"
-                            />
-                        </div>
-                        <div>
-                            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-2">Método de control</label>
-                            <div className="flex flex-wrap gap-1.5">
-                                {bloque.metodosControl.map(metodo => {
-                                    const active = blockData.metodosControl?.includes(metodo);
-                                    return (
-                                        <button key={metodo}
-                                            onClick={() => toggleMetodoControl(bloque.id, metodo)}
-                                            className={`text-[11px] font-bold px-2.5 py-1.5 rounded-lg border-2 transition-all duration-200 flex items-center gap-1
-                                                ${active ? theme.active : theme.light}`}>
-                                            {active && <Check className="w-3 h-3 flex-shrink-0" strokeWidth={3} />}
-                                            <span>{metodo}</span>
-                                        </button>
-                                    );
-                                })}
-                            </div>
-                        </div>
-                    </div>
-                )}
             </div>
         );
     };
@@ -1335,7 +1373,7 @@ export default function FormapATS() {
                                     <div>
                                         <h3 className="text-sm font-bold text-ises-blue mb-1">Semáforo de Seguridad (Kill-Switch)</h3>
                                         <p className="text-sm text-ises-dark/80 font-semibold">
-                                            Todos los EPP deben estar marcados como <strong>Cumple</strong> y todos los documentos deben estar respondidos para avanzar.
+                                            Los EPP inician aprobados por defecto. Solo debes reportar si hay alguna irregularidad. <strong>Todos los documentos básicos deben estar respondidos para avanzar.</strong>
                                         </p>
                                     </div>
                                 </div>
@@ -1347,7 +1385,7 @@ export default function FormapATS() {
                                     <div className="p-2 bg-ises-green/10 rounded-lg"><HardHat className="w-5 h-5 text-ises-green" /></div>
                                     Verificación de EPP
                                 </h2>
-                                <p className="text-xs text-slate-500 font-medium text-center">Toca los puntos en el trabajador para confirmar cada equipo.</p>
+                                <p className="text-xs text-slate-500 font-medium text-center">Los EPP están aprobados por defecto. <strong>Toca un ícono en el trabajador únicamente para reportar una anomalía.</strong></p>
 
                                 <div className="relative w-full max-w-[280px] mx-auto aspect-[3/4] bg-slate-50/50 rounded-2xl border-2 border-slate-100 shadow-inner flex items-center justify-center overflow-hidden">
                                     {/* Avatar Base — Figura de palito */}
@@ -1370,15 +1408,15 @@ export default function FormapATS() {
 
                                     {/* Puntos Interactivos */}
                                     {[
-                                        { id: 'casco', top: '12%', left: '50%', label: 'Casco barbuquejo', icon: HardHat },
-                                        { id: 'gafas', top: '24%', left: '22%', label: 'P. Visual', icon: Glasses },
-                                        { id: 'auditiva', top: '24%', left: '78%', label: 'P. Auditiva', icon: Ear },
-                                        { id: 'respiratoria', top: '36%', left: '50%', label: 'Respiratoria', icon: Wind },
-                                        { id: 'ropa', top: '50%', left: '50%', label: 'Ropa', icon: Shirt },
-                                        { id: 'mangas', top: '58%', left: '20%', label: 'Mangas diélecc.', icon: Shield },
-                                        { id: 'arnes', top: '42%', left: '78%', label: 'ECC', icon: ShieldAlert },
-                                        { id: 'guantes', top: '70%', left: '18%', label: 'Guantes', icon: Hand },
-                                        { id: 'botas', top: '90%', left: '62%', label: 'Botas', icon: Footprints },
+                                        { id: 'casco', top: '6%', left: '50%', label: 'Casco barbuquejo', icon: HardHat },
+                                        { id: 'gafas', top: '15%', left: '31%', label: 'P. Visual', icon: Glasses },
+                                        { id: 'auditiva', top: '15%', left: '69%', label: 'P. Auditiva', icon: Ear },
+                                        { id: 'respiratoria', top: '22%', left: '50%', label: 'Respiratoria', icon: Wind },
+                                        { id: 'ropa', top: '36%', left: '50%', label: 'Ropa', icon: Shirt },
+                                        { id: 'mangas', top: '38%', left: '34%', label: 'Mangas diélecc.', icon: Shield },
+                                        { id: 'arnes', top: '38%', left: '66%', label: 'ECC', icon: ShieldAlert },
+                                        { id: 'guantes', top: '48%', left: '22%', label: 'Guantes', icon: Hand },
+                                        { id: 'botas', top: '76%', left: '65%', label: 'Botas', icon: Footprints },
                                     ].map(punto => {
                                         const eppData = formData.epp[punto.id];
                                         const activo = eppData?.estado === 'ok';
@@ -1461,7 +1499,7 @@ export default function FormapATS() {
                                         <XCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
                                         <div>
                                             <p className="font-bold text-sm">Avance Bloqueado</p>
-                                            <p className="text-xs mt-1 text-red-700/80">Todos los EPP deben ser verificados y los documentos respondidos.</p>
+                                            <p className="text-xs mt-1 text-red-700/80">Las novedades de EPP reportadas deben estar descritas y los documentos básicos deben tener respuesta.</p>
                                         </div>
                                     </>
                                 )}
@@ -1496,7 +1534,10 @@ export default function FormapATS() {
                                             </div>
                                         </div>
 
-                                        <button onClick={() => setNovedadModal({ isOpen: false, itemKey: null })}
+                                        <button onClick={() => {
+                                            handleEppChange(novedadModal.itemKey, { estado: 'ok', novedad: '' });
+                                            setNovedadModal({ isOpen: false, itemKey: null });
+                                        }}
                                             className="w-full py-4 text-slate-400 font-bold uppercase tracking-wider text-xs hover:text-slate-600 transition-colors">
                                             Cancelar (Marcar Ok)
                                         </button>
