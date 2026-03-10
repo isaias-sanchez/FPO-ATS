@@ -75,7 +75,8 @@ const RIESGOS_BENTO = [
         titulo: 'Biológicos',
         iconKey: 'biologico',
         colorClass: 'green',
-        items: ['Virus, bacterias, hongos', 'Picaduras/Mordeduras de animales', 'Exposición a fluidos corporales'],
+        items: ['Mordedura y picadura de animales', 'Virus - Bacterias', 'Exposición a fluidos corporales'],
+        metodosControl: ['Análisis de la zona de trabajo', 'Evitar el contacto con animales', 'Evitar el uso de perfumes dulces', 'Lavado de manos', 'Uso de tapabocas si presenta síntomas', 'Consumo de agua tratada'],
         colSpan: 'md:col-span-1'
     },
     {
@@ -83,7 +84,8 @@ const RIESGOS_BENTO = [
         titulo: 'Físicos',
         iconKey: 'fisico',
         colorClass: 'sky',
-        items: ['Ruido excesivo continuo o de impacto', 'Iluminación deficiente', 'Temperaturas extremas (Calor/Frío)', 'Radiaciones no ionizantes'],
+        items: ['Radiaciones no ionizantes (Exposición a sol)', 'Ruido', 'Iluminación deficiente', 'Temperaturas extremas (Calor/Frío)'],
+        metodosControl: ['Hidratación constante', 'Uso de dotación manga larga', 'Disminuir tiempo de exposición al sol', 'Uso de protección auditiva (inserción o copa)'],
         colSpan: 'md:col-span-1'
     },
     {
@@ -91,7 +93,8 @@ const RIESGOS_BENTO = [
         titulo: 'Mecánicos / Seguridad',
         iconKey: 'mecanico',
         colorClass: 'orange',
-        items: ['Trabajo en Alturas (>1.5m)', 'Manejo de herramientas manuales/potencia', 'Caída de objetos por manipulación', 'Superficies resbaladizas o irregulares'],
+        items: ['Trabajo en Alturas (>2m)', 'Manejo de herramientas manuales/potencia', 'Caída de objetos por manipulación', 'Superficies resbaladizas o irregulares'],
+        metodosControl: ['Selección de herramienta adecuada para la tarea', 'Uso de herramientas en buen estado', 'Uso de EPP adecuados en buen estado', 'Uso de barreras de protección', 'Inspección de los ECC (Equipos Contra Caída)', 'Uso adecuado de los ECC', 'Diligenciar permiso de trabajo', 'Diligenciar lista de chequeo TSA', 'Instalación adecuada del equipo de rescate'],
         colSpan: 'md:col-span-2'
     },
     {
@@ -100,54 +103,61 @@ const RIESGOS_BENTO = [
         iconKey: 'electrico',
         colorClass: 'yellow',
         items: ['Contacto Alta Tensión', 'Contacto Baja Tensión', 'Arco Eléctrico / Estática'],
+        metodosControl: ['Identificar el nivel de tensión a intervenir', 'Seleccionar equipos y herramientas adecuados', 'Inspeccionar equipos y EPP dieléctricos', 'Uso de guantes adecuados al nivel de tensión', 'Uso de dotación ignífuga', 'Uso de careta Arc Flash', 'Respetar distancias de seguridad', 'Cumplimiento de las 5 RO'],
         colSpan: 'md:col-span-1'
     },
     {
         id: 'psicosocial',
         titulo: 'Psicosocial',
-        iconKey: 'mecanico',
+        iconKey: 'psicosocial',
         colorClass: 'amber',
         items: ['Condiciones de la tarea', 'Grupo de trabajo / Relaciones interpersonales', 'Estrés laboral'],
+        metodosControl: ['Organización del tiempo', 'Cumplimiento del procedimiento', 'Trabajo en equipo', 'Respeto y trato cordial'],
         colSpan: 'md:col-span-1'
     },
     {
         id: 'biomecanico',
         titulo: 'Biomecánico',
-        iconKey: 'mecanico',
+        iconKey: 'biomecanico',
         colorClass: 'sky',
         items: ['Manipulación manual de cargas', 'Postura prolongada', 'Movimientos repetitivos'],
+        metodosControl: ['No levantar más del peso permitido', 'Distribuir la carga', 'Realizar pausas activas', 'Tomar posturas adecuadas'],
         colSpan: 'md:col-span-1'
     },
     {
         id: 'locativo',
         titulo: 'Locativo',
-        iconKey: 'mecanico',
+        iconKey: 'locativo',
         colorClass: 'orange',
         items: ['Superficies / pisos en mal estado', 'Orden y aseo deficiente', 'Señalización insuficiente'],
+        metodosControl: ['Análisis de la zona de trabajo', 'Señalizar zonas de trabajo y desniveles', 'Caminar por zonas seguras', 'Usar calzado adecuado para la labor', 'Respetar las señalizaciones del entorno'],
         colSpan: 'md:col-span-1'
     },
     {
         id: 'transito',
         titulo: 'Accidentes de Tránsito',
-        iconKey: 'mecanico',
+        iconKey: 'transito',
         colorClass: 'yellow',
         items: ['Desplazamiento en vehículo', 'Cruce de vías / peatonal', 'Conducción en zona de obra'],
+        metodosControl: ['Inspección preoperacional del vehículo', 'No exceder los límites de velocidad establecidos', 'Respetar las señalizaciones en la vía', 'Cumplimiento de las normas de tránsito', 'Uso obligatorio del cinturón', 'No usar equipos celulares o distracciones', 'Aplicar normas de manejo defensivo', 'Mantener la concentración en la vía'],
         colSpan: 'md:col-span-1'
     },
     {
         id: 'publico',
         titulo: 'Riesgo Público',
-        iconKey: 'mecanico',
+        iconKey: 'publico',
         colorClass: 'blue',
         items: ['Atraco / hurto', 'Alteración de orden público', 'Confrontación con terceros'],
+        metodosControl: ['Ante un atraco o asalto no colocar resistencia', 'Aplicar técnicas de manejo de emociones', 'Mantener un trato cordial hacia los usuarios', 'Evitar confrontaciones con terceros'],
         colSpan: 'md:col-span-1'
     },
     {
         id: 'tecnologico',
         titulo: 'Tecnológicos',
-        iconKey: 'electrico',
+        iconKey: 'tecnologico',
         colorClass: 'green',
         items: ['Incendio / explosión', 'Derrame de sustancias', 'Fallo de equipos y maquinaria'],
+        metodosControl: ['Validar que se cuenta con extintor vigente y recargado'],
         colSpan: 'md:col-span-1'
     },
     {
@@ -155,10 +165,23 @@ const RIESGOS_BENTO = [
         titulo: 'Fenómenos Naturales',
         iconKey: 'natural',
         colorClass: 'blue',
-        items: ['Lluvias Fuertes / Tormentas Eléctricas', 'Sismos', 'Deslizamientos de tierra'],
+        items: ['Lluvias / Inundaciones', 'Sismos / Terremotos / Deslizamientos'],
+        metodosControl: ['Suspender actividades por prevención', 'Aplicar técnicas de evacuación'],
         colSpan: 'md:col-span-1'
     }
 ];
+
+const EPP_LABELS = {
+    casco: 'Casco con barbuquejo',
+    gafas: 'Protección visual',
+    auditiva: 'Protección auditiva',
+    respiratoria: 'Protección respiratoria',
+    guantes: 'Guantes diélectricos',
+    botas: 'Botas de seguridad',
+    ropa: 'Ropa adecuada (ignífuga/dieléctrica)',
+    mangas: 'Mangas dieléctricas',
+    arnes: 'Equipos contra caída (ECC)',
+};
 
 // Municipios del departamento de Atlántico con su zona de trabajo
 const ATLANTICO_MUNICIPIOS = [
@@ -186,6 +209,7 @@ export default function FormapATS() {
     const [formData, setFormData] = useState({
         // Paso 1
         fecha: '', horaInicio: '', horaFin: '',
+        proyecto: '',
         departamento: 'Atlántico', municipio: '', lugarTrabajo: '',
         consignacion: null, permisos: null, permisosDetalle: '',
         // Paso 2
@@ -193,7 +217,9 @@ export default function FormapATS() {
         documentosBasicos: {},      // { [item.text]: 'C' | 'NC' | 'NA' }
         // Paso 3
         riesgos: [], observaciones: '',
-        // Paso 4: matriz ambiental — { [control]: true/false }
+        riesgosControles: {},       // { [bloqueId]: { descripcion: '', metodosControl: [] } }
+        // Paso 4: matriz ambiental
+        impactosSeleccionados: {},  // { [aspecto|||impacto]: boolean }
         controlesAmbientales: {},
         // Paso 5
         ejecutores: [{ id: 1, nombre: '', cedula: '', cargo: '', firma: null }],
@@ -305,6 +331,33 @@ export default function FormapATS() {
                 : [...prev.riesgos, item]
         }));
 
+    const handleRiesgoControlChange = (bloqueId, field, value) =>
+        setFormData(prev => ({
+            ...prev,
+            riesgosControles: {
+                ...prev.riesgosControles,
+                [bloqueId]: { ...prev.riesgosControles[bloqueId], [field]: value }
+            }
+        }));
+
+    const toggleMetodoControl = (bloqueId, metodo) => {
+        const current = formData.riesgosControles[bloqueId]?.metodosControl || [];
+        const updated = current.includes(metodo) ? current.filter(m => m !== metodo) : [...current, metodo];
+        handleRiesgoControlChange(bloqueId, 'metodosControl', updated);
+    };
+
+    const toggleImpacto = (aspecto, impacto) => {
+        const impactoKey = `${aspecto}|||${impacto}`;
+        const isCurrentlySelected = formData.impactosSeleccionados[impactoKey];
+        setFormData(prev => ({
+            ...prev,
+            impactosSeleccionados: { ...prev.impactosSeleccionados, [impactoKey]: !isCurrentlySelected },
+            controlesAmbientales: isCurrentlySelected
+                ? Object.fromEntries(Object.entries(prev.controlesAmbientales).filter(([k]) => !k.startsWith(`${impacto}|||`)))
+                : prev.controlesAmbientales
+        }));
+    };
+
     const addEjecutor = () =>
         setFormData(prev => ({
             ...prev,
@@ -345,8 +398,8 @@ export default function FormapATS() {
     // ── Validaciones ──
 
     const isStep1Valid = () => {
-        const { fecha, horaInicio, horaFin, departamento, municipio, lugarTrabajo, consignacion, permisos } = formData;
-        return fecha && horaInicio && horaFin && departamento.trim() && municipio.trim() && lugarTrabajo.trim() && consignacion !== null && permisos !== null;
+        const { fecha, horaInicio, horaFin, departamento, municipio, lugarTrabajo, consignacion, permisos, proyecto } = formData;
+        return fecha && horaInicio && horaFin && departamento.trim() && municipio.trim() && lugarTrabajo.trim() && proyecto.trim() && consignacion !== null && permisos !== null;
     };
 
     const isStep2Valid = () => {
@@ -360,7 +413,9 @@ export default function FormapATS() {
 
     const isStep3Valid = () => formData.riesgos.length > 0;
 
-    const isStep4Valid = () => Object.values(formData.controlesAmbientales).some(v => v === true);
+    const isStep4Valid = () =>
+        Object.values(formData.impactosSeleccionados).some(Boolean) &&
+        Object.values(formData.controlesAmbientales).some(v => v === true);
 
     const isStep5Valid = () => {
         const ejecutoresOk = formData.ejecutores.every(ej => ej.nombre.trim() && ej.cedula.trim() && ej.cargo.trim() && ej.firma);
@@ -493,17 +548,17 @@ export default function FormapATS() {
 
                 <div className="bg-slate-50 rounded-2xl border-2 border-slate-200 p-6 flex flex-col items-center text-center shadow-[inset_0_2px_10px_rgba(0,0,0,0.02)] min-h-[220px] transition-all duration-300 relative overflow-hidden group">
 
-                    {/* Botones de navegación interna (Opcional, si el usuario quiere retroceder/avanzar sin responder) */}
-                    <div className="absolute top-1/2 -translate-y-1/2 left-2 right-2 flex justify-between pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
+                    {/* Botones de navegación — siempre visibles */}
+                    <div className="absolute top-1/2 -translate-y-1/2 left-2 right-2 flex justify-between">
                         <button onClick={(e) => { e.stopPropagation(); setCurrentDocIndex(p => Math.max(0, p - 1)) }}
                             disabled={currentDocIndex === 0}
-                            className={`p-2 rounded-full bg-white shadow-md border border-slate-200 pointer-events-auto transition-transform active:scale-90
+                            className={`p-2 rounded-full bg-white shadow-md border border-slate-200 transition-transform active:scale-90
                             ${currentDocIndex === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:scale-110'}`}>
                             <ChevronRight className="w-5 h-5 text-slate-600 rotate-180" />
                         </button>
                         <button onClick={(e) => { e.stopPropagation(); setCurrentDocIndex(p => Math.min(DOCUMENTOS_BASICOS.length - 1, p + 1)) }}
                             disabled={currentDocIndex === DOCUMENTOS_BASICOS.length - 1}
-                            className={`p-2 rounded-full bg-white shadow-md border border-slate-200 pointer-events-auto transition-transform active:scale-90
+                            className={`p-2 rounded-full bg-white shadow-md border border-slate-200 transition-transform active:scale-90
                             ${currentDocIndex === DOCUMENTOS_BASICOS.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:scale-110'}`}>
                             <ChevronRight className="w-5 h-5 text-slate-600" />
                         </button>
@@ -548,9 +603,11 @@ export default function FormapATS() {
             sky: { text: 'text-sky-500', bg: 'bg-sky-500/10', light: 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-white hover:border-sky-400 hover:shadow-sm', active: 'bg-sky-500 text-white border-sky-500 shadow-[0_4px_12px_rgba(14,165,233,0.3)]' }
         };
         const theme = colorMap[bloque.colorClass] || colorMap.blue;
+        const selectedCount = bloque.items.filter(item => formData.riesgos.includes(item)).length;
+        const blockData = formData.riesgosControles[bloque.id] || {};
 
         return (
-            <div className={`bg-white p-5 rounded-3xl border border-slate-100 shadow-sm flex flex-col gap-4 ${bloque.colSpan} relative overflow-hidden group`}>
+            <div className={`bg-white p-5 rounded-3xl border border-slate-100 shadow-sm flex flex-col gap-4 ${bloque.colSpan} relative overflow-hidden`}>
                 <div className="flex items-center gap-3 relative z-10">
                     <div className={`p-2.5 rounded-xl ${theme.bg}`}>
                         <DynamicIcon type="risk" iconKey={bloque.iconKey} className={`w-6 h-6 ${theme.text}`} />
@@ -558,12 +615,12 @@ export default function FormapATS() {
                     <div>
                         <h3 className="font-extrabold text-ises-dark text-lg leading-tight">{bloque.titulo}</h3>
                         <p className="text-xs font-bold text-slate-400 mt-0.5">
-                            {bloque.items.filter(item => formData.riesgos.includes(item)).length} Seleccionados
+                            {selectedCount} Seleccionados
                         </p>
                     </div>
                 </div>
 
-                <div className="flex flex-wrap gap-2 relative z-10 mt-auto">
+                <div className="flex flex-wrap gap-2 relative z-10">
                     {bloque.items.map(item => {
                         const isSelected = formData.riesgos.includes(item);
                         return (
@@ -577,19 +634,55 @@ export default function FormapATS() {
                         );
                     })}
                 </div>
+
+                {/* Descripción + Métodos de control (aparece cuando hay ítems seleccionados) */}
+                {selectedCount > 0 && (
+                    <div className="border-t border-slate-100 pt-3 space-y-3 relative z-10">
+                        <div>
+                            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Descripción del riesgo</label>
+                            <textarea
+                                rows={2}
+                                placeholder="Describe las condiciones del riesgo identificado..."
+                                value={blockData.descripcion || ''}
+                                onChange={e => handleRiesgoControlChange(bloque.id, 'descripcion', e.target.value)}
+                                className="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium text-ises-dark resize-none outline-none focus:ring-2 focus:ring-ises-green/40 focus:border-ises-green/40"
+                            />
+                        </div>
+                        <div>
+                            <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-2">Método de control</label>
+                            <div className="flex flex-wrap gap-1.5">
+                                {bloque.metodosControl.map(metodo => {
+                                    const active = blockData.metodosControl?.includes(metodo);
+                                    return (
+                                        <button key={metodo}
+                                            onClick={() => toggleMetodoControl(bloque.id, metodo)}
+                                            className={`text-[11px] font-bold px-2.5 py-1.5 rounded-lg border-2 transition-all duration-200 flex items-center gap-1
+                                                ${active ? theme.active : theme.light}`}>
+                                            {active && <Check className="w-3 h-3 flex-shrink-0" strokeWidth={3} />}
+                                            <span>{metodo}</span>
+                                        </button>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
         );
     };
 
     const AccordionImpactCategory = ({ aspecto, impactos, isOpen, onToggle }) => {
-        // Calcular si hay controles seleccionados dentro de este aspecto
         const hasSelectedControls = impactos.some(imp =>
-            imp.controles.some(ctrl => formData.controlesAmbientales[ctrl])
+            imp.controles.some(ctrl => formData.controlesAmbientales[`${imp.impacto}|||${ctrl}`])
         );
+        const hasSelectedImpacts = impactos.some(imp =>
+            formData.impactosSeleccionados[`${aspecto}|||${imp.impacto}`]
+        );
+        const isActive = isOpen || hasSelectedControls || hasSelectedImpacts;
 
         return (
             <div className={`bg-white rounded-2xl shadow-sm border transition-all duration-300 overflow-hidden
-                ${isOpen ? 'border-ises-green shadow-md ring-1 ring-ises-green/20' : 'border-slate-100 hover:border-slate-300'}`}>
+                ${isActive ? 'border-ises-green shadow-md ring-1 ring-ises-green/20' : 'border-slate-100 hover:border-slate-300'}`}>
 
                 {/* Cabecera del Acordeón */}
                 <button
@@ -597,35 +690,57 @@ export default function FormapATS() {
                     className="w-full flex items-center justify-between p-4 bg-white hover:bg-slate-50 transition-colors text-left"
                 >
                     <div className="flex items-center gap-3">
-                        <div className={`p-2 rounded-xl transition-colors ${isOpen || hasSelectedControls ? 'bg-ises-green/10 text-ises-green' : 'bg-slate-100 text-slate-500'}`}>
+                        <div className={`p-2 rounded-xl transition-colors ${isActive ? 'bg-ises-green/10 text-ises-green' : 'bg-slate-100 text-slate-500'}`}>
                             <Leaf className="w-5 h-5" />
                         </div>
-                        <h3 className={`font-extrabold text-sm md:text-base pr-4 transition-colors ${isOpen || hasSelectedControls ? 'text-ises-green-dark' : 'text-ises-dark'}`}>
+                        <h3 className={`font-extrabold text-sm md:text-base pr-4 transition-colors ${isActive ? 'text-ises-green-dark' : 'text-ises-dark'}`}>
                             {aspecto}
                         </h3>
                     </div>
                     <div className="flex flex-col items-center gap-1 flex-shrink-0">
                         <div className={`transform transition-transform duration-300 ${isOpen ? '-rotate-90' : 'rotate-90'}`}>
-                            <ChevronRight className={`w-5 h-5 ${isOpen || hasSelectedControls ? 'text-ises-green' : 'text-slate-400'}`} />
+                            <ChevronRight className={`w-5 h-5 ${isActive ? 'text-ises-green' : 'text-slate-400'}`} />
                         </div>
-                        {/* Indicador sutil de completado */}
-                        {hasSelectedControls && !isOpen && (
+                        {(hasSelectedControls || hasSelectedImpacts) && !isOpen && (
                             <div className="w-1.5 h-1.5 bg-ises-green rounded-full shadow-[0_0_5px_rgba(153,204,51,0.5)]" />
                         )}
                     </div>
                 </button>
 
                 {/* Contenido Expandible */}
-                <div
-                    className={`transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}`}
-                >
-                    <div className="p-4 pt-0 border-t border-slate-100 bg-slate-50/50 space-y-5">
-                        {impactos.map(({ impacto, controles }) => (
+                <div className={`transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[1200px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <div className="p-4 pt-0 border-t border-slate-100 bg-slate-50/50 space-y-4">
+
+                        {/* Paso 1: Seleccionar el impacto ambiental */}
+                        <div>
+                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">1. Selecciona el impacto ambiental:</p>
+                            <div className="flex flex-wrap gap-2">
+                                {impactos.map(({ impacto }) => {
+                                    const impactoKey = `${aspecto}|||${impacto}`;
+                                    const isSelected = formData.impactosSeleccionados[impactoKey];
+                                    return (
+                                        <button key={impacto}
+                                            onClick={() => toggleImpacto(aspecto, impacto)}
+                                            className={`text-xs font-bold px-3 py-2 rounded-xl border-2 flex items-center gap-1.5 transition-all duration-200
+                                                ${isSelected
+                                                    ? 'bg-ises-green text-white border-ises-green shadow-[0_4px_12px_rgba(153,204,51,0.3)]'
+                                                    : 'bg-white border-slate-200 text-slate-600 hover:border-ises-green/50 hover:bg-ises-green/5'}`}>
+                                            {isSelected && <Check className="w-3 h-3 flex-shrink-0" strokeWidth={3} />}
+                                            {impacto}
+                                        </button>
+                                    );
+                                })}
+                            </div>
+                        </div>
+
+                        {/* Paso 2: Métodos de control para impactos seleccionados */}
+                        {impactos.filter(({ impacto }) => formData.impactosSeleccionados[`${aspecto}|||${impacto}`]).map(({ impacto, controles }) => (
                             <div key={impacto} className="border border-slate-200 rounded-xl bg-white p-4 shadow-sm">
                                 <h4 className="font-extrabold text-sm text-ises-dark mb-3 flex items-start gap-2">
                                     <div className="mt-0.5 p-1 bg-red-50 rounded"><AlertTriangle className="w-4 h-4 text-red-500" /></div>
                                     {impacto}
                                 </h4>
+                                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">2. Método de control:</p>
                                 <div className="flex flex-wrap gap-2">
                                     {controles.map(control => {
                                         const compositeKey = `${impacto}|||${control}`;
@@ -634,7 +749,7 @@ export default function FormapATS() {
                                             <button key={compositeKey}
                                                 onClick={() => handleControlChange(compositeKey, !active)}
                                                 className={`text-left text-[11px] font-bold px-3 py-2 rounded-lg border-2 transition-all duration-300 flex items-center gap-2
-                                                            ${active
+                                                    ${active
                                                         ? 'bg-ises-green text-white border-ises-green shadow-[0_4px_12px_rgba(153,204,51,0.3)] scale-105'
                                                         : 'bg-white border-slate-200 text-slate-600 hover:border-ises-green/50 hover:bg-ises-green/5 flex-grow sm:flex-grow-0'}`}>
                                                 {active ? <span><Check className="w-3.5 h-3.5" strokeWidth={3} /></span> : null}
@@ -751,6 +866,7 @@ export default function FormapATS() {
         const wb = XLSX.utils.book_new();
 
         const wsGeneral = XLSX.utils.json_to_sheet([{
+            Proyecto: formData.proyecto || '',
             Fecha: formData.fecha,
             Hora_Inicio: formData.horaInicio,
             Hora_Fin: formData.horaFin,
@@ -780,8 +896,17 @@ export default function FormapATS() {
         XLSX.utils.book_append_sheet(wb, wsDocs, "Documentos");
 
         const riesgosControles = [
-            ...formData.riesgos.map(r => ({ Categoria: 'Riesgo', Detalle: r })),
-            ...Object.entries(formData.controlesAmbientales).filter(([, v]) => v).map(([c]) => ({ Categoria: 'Control Ambiental', Detalle: c.includes('|||') ? c.split('|||')[1] : c }))
+            ...RIESGOS_BENTO.filter(b => b.items.some(i => formData.riesgos.includes(i))).flatMap(bloque => {
+                const bData = formData.riesgosControles[bloque.id] || {};
+                return [
+                    ...bloque.items.filter(i => formData.riesgos.includes(i)).map(r => ({ Categoria: bloque.titulo, Riesgo: r, Descripcion: bData.descripcion || '', Metodos_Control: (bData.metodosControl || []).join(', ') }))
+                ];
+            }),
+            ...Object.entries(formData.impactosSeleccionados).filter(([, v]) => v).map(([key]) => {
+                const [aspecto, impacto] = key.split('|||');
+                const controls = Object.entries(formData.controlesAmbientales).filter(([k, v]) => v && k.startsWith(`${impacto}|||`)).map(([k]) => k.split('|||')[1]);
+                return { Categoria: 'Ambiental', Riesgo: aspecto, Descripcion: impacto, Metodos_Control: controls.join(', ') };
+            })
         ];
         const wsRiesgos = XLSX.utils.json_to_sheet(riesgosControles);
         XLSX.utils.book_append_sheet(wb, wsRiesgos, "Riesgos_y_Controles");
@@ -844,7 +969,11 @@ export default function FormapATS() {
                         <div className="border border-slate-300 rounded overflow-hidden">
                             <h2 className="text-[9px] font-black bg-slate-100 px-2 py-1.5 border-b border-slate-300 uppercase tracking-widest text-ises-dark m-0">1. Info General</h2>
                             <div className="p-2 space-y-2">
-                                <div className="grid grid-cols-2 gap-4">
+                                <div>
+                                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-0.5">Proyecto</p>
+                                    <p className="font-extrabold text-ises-dark">{formData.proyecto || 'N/A'}</p>
+                                </div>
+                                <div className="grid grid-cols-2 gap-4 border-t border-slate-100 pt-2">
                                     <div>
                                         <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-0.5">Departamento</p>
                                         <p className="font-bold text-ises-dark">{formData.departamento || 'N/A'}</p>
@@ -854,7 +983,7 @@ export default function FormapATS() {
                                         <p className="font-bold text-ises-dark">{formData.municipio || 'N/A'}</p>
                                     </div>
                                 </div>
-                                <div className="border-t border-slate-100 pt-3">
+                                <div className="border-t border-slate-100 pt-2">
                                     <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-0.5">Ubicación Exacta</p>
                                     <p className="font-extrabold uppercase text-ises-blue">{formData.lugarTrabajo || 'No especificada'}</p>
                                 </div>
@@ -878,7 +1007,7 @@ export default function FormapATS() {
                                             const st = val?.estado;
                                             return (
                                                 <li key={key} className="flex justify-between items-center border-b border-slate-100 pb-0.5 last:border-0 last:pb-0">
-                                                    <span className="capitalize font-bold text-slate-600 shrink-0">{key}</span>
+                                                    <span className="font-bold text-slate-600 shrink-0 pr-1">{EPP_LABELS[key] || key}</span>
                                                     {st === 'ok' ? <span className="text-ises-green-dark font-black uppercase">Conforme</span> :
                                                         st === 'novedad' ? <span className="text-amber-700 font-bold text-[8px] text-right ml-2 leading-tight break-words" title={val.novedad}>NOV: {val.novedad}</span> :
                                                             st === 'na' ? <span className="text-slate-400 font-bold">N/A</span> : <span className="text-red-500 font-black">PNDT</span>}
@@ -943,16 +1072,28 @@ export default function FormapATS() {
                     <div className="grid grid-cols-2 gap-4">
                         <div className="border border-slate-300 rounded overflow-hidden">
                             <h2 className="text-[9px] font-black bg-slate-100 px-2 py-1.5 border-b border-slate-300 uppercase tracking-widest text-ises-dark m-0">4. Riesgos Identificados</h2>
-                            <div className="p-2">
+                            <div className="p-2 space-y-2">
                                 {formData.riesgos.length > 0 ? (
-                                    <ul className="list-disc pl-4 text-[9px] font-bold text-slate-600 space-y-1 marker:text-amber-500">
-                                        {formData.riesgos.map((r, i) => <li key={i}>{r}</li>)}
-                                    </ul>
+                                    RIESGOS_BENTO.filter(b => b.items.some(i => formData.riesgos.includes(i))).map(bloque => {
+                                        const bData = formData.riesgosControles[bloque.id] || {};
+                                        return (
+                                            <div key={bloque.id} className="border-b border-slate-100 pb-1.5 last:border-0">
+                                                <p className="text-[9px] font-black text-ises-dark">{bloque.titulo}</p>
+                                                <ul className="list-disc pl-3 text-[8px] text-slate-600 font-bold space-y-0.5 marker:text-amber-500">
+                                                    {bloque.items.filter(i => formData.riesgos.includes(i)).map((r, i) => <li key={i}>{r}</li>)}
+                                                </ul>
+                                                {bData.descripcion && <p className="text-[8px] text-slate-500 mt-0.5 italic">{bData.descripcion}</p>}
+                                                {bData.metodosControl?.length > 0 && (
+                                                    <p className="text-[8px] font-bold text-ises-blue mt-0.5">Control: {bData.metodosControl.join(', ')}</p>
+                                                )}
+                                            </div>
+                                        );
+                                    })
                                 ) : (
                                     <p className="text-[9px] text-slate-400 italic font-medium">No se seleccionaron riesgos.</p>
                                 )}
                                 {formData.observaciones && (
-                                    <div className="mt-2 pt-2 border-t border-slate-100">
+                                    <div className="pt-1 border-t border-slate-100">
                                         <p className="text-[8px] font-black text-slate-400 uppercase tracking-wider">Observaciones:</p>
                                         <p className="text-[9px] text-slate-600 font-medium mt-0.5">{formData.observaciones}</p>
                                     </div>
@@ -962,11 +1103,25 @@ export default function FormapATS() {
 
                         <div className="border border-slate-300 rounded overflow-hidden">
                             <h2 className="text-[9px] font-black bg-slate-100 px-2 py-1.5 border-b border-slate-300 uppercase tracking-widest text-ises-dark m-0">5. Controles Ambientales</h2>
-                            <div className="p-2">
-                                {Object.values(formData.controlesAmbientales).some(Boolean) ? (
-                                    <ul className="list-disc pl-4 text-[9px] font-bold text-slate-600 space-y-1 marker:text-ises-green">
-                                        {Object.entries(formData.controlesAmbientales).filter(([, v]) => v).map(([c], i) => <li key={i}>{c.includes('|||') ? c.split('|||')[1] : c}</li>)}
-                                    </ul>
+                            <div className="p-2 space-y-1.5">
+                                {Object.values(formData.impactosSeleccionados).some(Boolean) ? (
+                                    Object.entries(formData.impactosSeleccionados).filter(([, v]) => v).map(([key]) => {
+                                        const [aspecto, impacto] = key.split('|||');
+                                        const activeControls = Object.entries(formData.controlesAmbientales)
+                                            .filter(([k, v]) => v && k.startsWith(`${impacto}|||`))
+                                            .map(([k]) => k.split('|||')[1]);
+                                        return (
+                                            <div key={key} className="border-b border-slate-100 pb-1 last:border-0">
+                                                <p className="text-[8px] font-black text-ises-dark">{aspecto}</p>
+                                                <p className="text-[8px] text-slate-500 font-bold">Impacto: {impacto}</p>
+                                                {activeControls.length > 0 && (
+                                                    <ul className="list-disc pl-3 text-[8px] font-bold text-ises-green-dark marker:text-ises-green space-y-0.5 mt-0.5">
+                                                        {activeControls.map((c, i) => <li key={i}>{c}</li>)}
+                                                    </ul>
+                                                )}
+                                            </div>
+                                        );
+                                    })
                                 ) : (
                                     <p className="text-[9px] text-slate-400 italic font-medium">Sin controles ambientales activos.</p>
                                 )}
@@ -1053,8 +1208,14 @@ export default function FormapATS() {
                             <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 space-y-5">
                                 <h2 className="text-lg font-bold text-ises-dark border-b border-slate-100 pb-3 flex items-center gap-2">
                                     <div className="p-2 bg-ises-green/10 rounded-lg"><Clock className="w-5 h-5 text-ises-green" /></div>
-                                    Tiempo de Ejecución
+                                    Datos de la Actividad
                                 </h2>
+                                <div className="flex flex-col gap-2">
+                                    <label className="font-bold text-ises-dark text-sm">Proyecto</label>
+                                    <input type="text" placeholder="Ej. MLU AIR-E, Expansión Zona Norte..." value={formData.proyecto}
+                                        onChange={e => handleInputChange('proyecto', e.target.value)}
+                                        className="w-full p-4 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-ises-green focus:border-ises-green min-h-[3.5rem] font-bold text-ises-dark" />
+                                </div>
                                 <div className="flex flex-col gap-2">
                                     <label className="font-bold text-ises-dark text-sm">Fecha de realización</label>
                                     <input type="date" value={formData.fecha}
@@ -1189,35 +1350,35 @@ export default function FormapATS() {
                                 <p className="text-xs text-slate-500 font-medium text-center">Toca los puntos en el trabajador para confirmar cada equipo.</p>
 
                                 <div className="relative w-full max-w-[280px] mx-auto aspect-[3/4] bg-slate-50/50 rounded-2xl border-2 border-slate-100 shadow-inner flex items-center justify-center overflow-hidden">
-                                    {/* Avatar Base */}
+                                    {/* Avatar Base — Figura de palito */}
                                     <div className="absolute inset-2 flex items-center justify-center pointer-events-none">
-                                        <img src="/avatar-ises.png" alt="Trabajador ISES" className="w-full h-full object-contain opacity-90 drop-shadow-md"
-                                            onError={(e) => {
-                                                e.target.style.display = 'none';
-                                                e.target.nextSibling.style.display = 'block';
-                                            }} />
-                                        {/* Fallback SVG if image not found */}
-                                        <svg viewBox="0 0 200 400" className="hidden w-full h-full text-slate-200 drop-shadow-sm">
-                                            <circle cx="100" cy="70" r="35" fill="currentColor" />
-                                            <rect x="65" y="110" width="70" height="120" rx="15" fill="currentColor" />
-                                            <rect x="35" y="120" width="25" height="100" rx="12" fill="currentColor" />
-                                            <rect x="140" y="120" width="25" height="100" rx="12" fill="currentColor" />
-                                            <rect x="70" y="235" width="25" height="120" rx="12" fill="currentColor" />
-                                            <rect x="105" y="235" width="25" height="120" rx="12" fill="currentColor" />
+                                        <svg viewBox="0 0 200 400" className="w-full h-full text-slate-300 drop-shadow-sm">
+                                            {/* Cabeza */}
+                                            <circle cx="100" cy="55" r="30" fill="none" stroke="currentColor" strokeWidth="8" />
+                                            {/* Cuerpo */}
+                                            <line x1="100" y1="85" x2="100" y2="210" stroke="currentColor" strokeWidth="8" strokeLinecap="round" />
+                                            {/* Brazo izquierdo */}
+                                            <line x1="100" y1="120" x2="45" y2="175" stroke="currentColor" strokeWidth="8" strokeLinecap="round" />
+                                            {/* Brazo derecho */}
+                                            <line x1="100" y1="120" x2="155" y2="175" stroke="currentColor" strokeWidth="8" strokeLinecap="round" />
+                                            {/* Pierna izquierda */}
+                                            <line x1="100" y1="210" x2="60" y2="320" stroke="currentColor" strokeWidth="8" strokeLinecap="round" />
+                                            {/* Pierna derecha */}
+                                            <line x1="100" y1="210" x2="140" y2="320" stroke="currentColor" strokeWidth="8" strokeLinecap="round" />
                                         </svg>
                                     </div>
 
                                     {/* Puntos Interactivos */}
                                     {[
-                                        { id: 'casco', top: '12%', left: '50%', label: 'Casco', icon: HardHat },
-                                        { id: 'gafas', top: '22%', left: '25%', label: 'Gafas', icon: Glasses },
-                                        { id: 'auditiva', top: '22%', left: '75%', label: 'P. Auditiva', icon: Ear },
-                                        { id: 'respiratoria', top: '35%', left: '50%', label: 'Resp.', icon: Wind },
-                                        { id: 'ropa', top: '45%', left: '50%', label: 'Ropa', icon: Shirt },
-                                        { id: 'mangas', top: '55%', left: '25%', label: 'Mangas', icon: Shirt },
-                                        { id: 'arnes', top: '45%', left: '75%', label: 'Arnés', icon: Shield },
-                                        { id: 'guantes', top: '65%', left: '20%', label: 'Guantes', icon: Hand },
-                                        { id: 'botas', top: '88%', left: '60%', label: 'Botas', icon: Footprints },
+                                        { id: 'casco', top: '12%', left: '50%', label: 'Casco barbuquejo', icon: HardHat },
+                                        { id: 'gafas', top: '24%', left: '22%', label: 'P. Visual', icon: Glasses },
+                                        { id: 'auditiva', top: '24%', left: '78%', label: 'P. Auditiva', icon: Ear },
+                                        { id: 'respiratoria', top: '36%', left: '50%', label: 'Respiratoria', icon: Wind },
+                                        { id: 'ropa', top: '50%', left: '50%', label: 'Ropa', icon: Shirt },
+                                        { id: 'mangas', top: '58%', left: '20%', label: 'Mangas diélecc.', icon: Shield },
+                                        { id: 'arnes', top: '42%', left: '78%', label: 'ECC', icon: ShieldAlert },
+                                        { id: 'guantes', top: '70%', left: '18%', label: 'Guantes', icon: Hand },
+                                        { id: 'botas', top: '90%', left: '62%', label: 'Botas', icon: Footprints },
                                     ].map(punto => {
                                         const eppData = formData.epp[punto.id];
                                         const activo = eppData?.estado === 'ok';

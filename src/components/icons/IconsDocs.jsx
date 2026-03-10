@@ -143,4 +143,69 @@ export const RiskIcons = {
             <path d="M12 3C9.5 6.5 9.5 17.5 12 21" stroke="#99CC33" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
     ),
+
+    // Psicosocial (persona con estrés)
+    psicosocial: (props) => (
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+            <circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M4 20C4 17.7909 7.58172 16 12 16C16.4183 16 20 17.7909 20 20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M16 3C17.5 1.5 20 2 20 4C20 5.5 18 6 17.5 7.5" stroke="#f59e0b" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <circle cx="17.5" cy="9" r="0.75" fill="#f59e0b" />
+        </svg>
+    ),
+
+    // Biomecánico (persona cargando peso)
+    biomecanico: (props) => (
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+            <circle cx="12" cy="4.5" r="2" stroke="currentColor" strokeWidth="1.5" />
+            <path d="M9 8L12 7L15 8V13L12 14L9 13V8Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M9 10L6 11L5 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M15 10L18 11L19 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M10 13L9 20M14 13L15 20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            <rect x="6" y="14" width="12" height="3" rx="1.5" fill="#38bdf8" fillOpacity="0.3" stroke="#38bdf8" strokeWidth="1.5" />
+        </svg>
+    ),
+
+    // Locativo (edificio con piso)
+    locativo: (props) => (
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+            <path d="M3 21H21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            <path d="M5 21V8L12 3L19 8V21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M9 21V15H15V21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M9 11H10M14 11H15" stroke="#f97316" strokeWidth="2" strokeLinecap="round" />
+            <path d="M9 14H10M14 14H15" stroke="#f97316" strokeWidth="2" strokeLinecap="round" />
+        </svg>
+    ),
+
+    // Accidentes de Tránsito (carro)
+    transito: (props) => (
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+            <path d="M5 17H3V13L6.5 7H17.5L21 13V17H19" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <circle cx="7.5" cy="17.5" r="2.5" stroke="currentColor" strokeWidth="1.5" />
+            <circle cx="16.5" cy="17.5" r="2.5" stroke="currentColor" strokeWidth="1.5" />
+            <path d="M10 17.5H14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            <path d="M7 13H17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            <path d="M8 10L8.5 13M16 10L15.5 13" stroke="#eab308" strokeWidth="1.5" strokeLinecap="round" />
+        </svg>
+    ),
+
+    // Riesgo Público (persona con escudo)
+    publico: (props) => (
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+            <circle cx="8" cy="6" r="3" stroke="currentColor" strokeWidth="1.5" />
+            <path d="M2 20C2 17.2386 4.68629 15 8 15C9.13 15 10.19 15.27 11.1 15.74" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            <path d="M18 11L15.5 12.5V16C15.5 17.8 16.6 19.4 18 20C19.4 19.4 20.5 17.8 20.5 16V12.5L18 11Z" fill="#3b82f6" fillOpacity="0.2" stroke="#3b82f6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M17 15.5L17.8 16.5L19.2 14.5" stroke="#3b82f6" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+    ),
+
+    // Tecnológico (fuego/extintor)
+    tecnologico: (props) => (
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+            <path d="M12 2C12 2 8 6 8 10C8 12.2 9.8 14 12 14C14.2 14 16 12.2 16 10C16 8 14 6 14 6C14 6 13.5 8 12 8C10.5 8 10 6.5 10 6.5C10 6.5 12 5 12 2Z" fill="#f97316" fillOpacity="0.3" stroke="#f97316" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M12 14V22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            <path d="M8 22H16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            <path d="M6 18H18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        </svg>
+    ),
 };
