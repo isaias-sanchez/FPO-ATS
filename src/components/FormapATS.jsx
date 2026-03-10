@@ -934,10 +934,10 @@ export default function FormapATS() {
         XLSX.utils.book_append_sheet(wb, wsDocs, "Documentos");
 
         const riesgosControles = [
-            ...RIESGOS_BENTO.filter(b => b.items.some(i => formData.riesgos.includes(i))).flatMap(bloque => {
+            ...RIESGOS_BENTO.filter(b => b.items.some(i => formData.riesgos.includes(i.nombre))).flatMap(bloque => {
                 const bData = formData.riesgosControles[bloque.id] || {};
                 return [
-                    ...bloque.items.filter(i => formData.riesgos.includes(i)).map(r => ({ Categoria: bloque.titulo, Riesgo: r, Descripcion: bData.descripcion || '', Metodos_Control: (bData.metodosControl || []).join(', ') }))
+                    ...bloque.items.filter(i => formData.riesgos.includes(i.nombre)).map(r => ({ Categoria: bloque.titulo, Riesgo: r.nombre, Descripcion: bData.descripcion || '', Metodos_Control: (bData.metodosControl || []).join(', ') }))
                 ];
             }),
             ...Object.entries(formData.impactosSeleccionados).filter(([, v]) => v).map(([key]) => {
@@ -1112,13 +1112,13 @@ export default function FormapATS() {
                             <h2 className="text-[9px] font-black bg-slate-100 px-2 py-1.5 border-b border-slate-300 uppercase tracking-widest text-ises-dark m-0">4. Riesgos Identificados</h2>
                             <div className="p-2 space-y-2">
                                 {formData.riesgos.length > 0 ? (
-                                    RIESGOS_BENTO.filter(b => b.items.some(i => formData.riesgos.includes(i))).map(bloque => {
+                                    RIESGOS_BENTO.filter(b => b.items.some(i => formData.riesgos.includes(i.nombre))).map(bloque => {
                                         const bData = formData.riesgosControles[bloque.id] || {};
                                         return (
                                             <div key={bloque.id} className="border-b border-slate-100 pb-1.5 last:border-0">
                                                 <p className="text-[9px] font-black text-ises-dark">{bloque.titulo}</p>
                                                 <ul className="list-disc pl-3 text-[8px] text-slate-600 font-bold space-y-0.5 marker:text-amber-500">
-                                                    {bloque.items.filter(i => formData.riesgos.includes(i)).map((r, i) => <li key={i}>{r}</li>)}
+                                                    {bloque.items.filter(i => formData.riesgos.includes(i.nombre)).map((r, i) => <li key={i}>{r.nombre}</li>)}
                                                 </ul>
                                                 {bData.descripcion && <p className="text-[8px] text-slate-500 mt-0.5 italic">{bData.descripcion}</p>}
                                                 {bData.metodosControl?.length > 0 && (
