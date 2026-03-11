@@ -1184,7 +1184,7 @@ export default function FormapATS() {
                                             <span className="text-[7px] uppercase font-bold text-slate-300 tracking-widest">Sin Firma</span>
                                         )}
                                     </div>
-                                    <p className="font-extrabold text-[10px] uppercase text-ises-dark truncate w-full">{ej.nombre || 'No Ingresado'}</p>
+                                    <p className="font-extrabold text-[10px] uppercase text-ises-dark break-words text-center w-full leading-tight">{ej.nombre || 'No Ingresado'}</p>
                                     <p className="text-[8px] font-medium text-slate-500 m-0">CC: {ej.cedula || '---'}</p>
                                     <p className="text-[8px] font-black uppercase text-ises-blue m-0">{ej.cargo || '---'}</p>
                                 </div>
@@ -1389,20 +1389,20 @@ export default function FormapATS() {
 
                                 <div className="relative w-full max-w-[280px] mx-auto aspect-[3/4] bg-slate-50/50 rounded-2xl border-2 border-slate-100 shadow-inner flex items-center justify-center overflow-hidden">
                                     {/* Avatar Base — Figura de palito */}
-                                    <div className="absolute inset-2 flex items-center justify-center pointer-events-none">
-                                        <svg viewBox="0 0 200 400" className="w-full h-full text-slate-300 drop-shadow-sm">
+                                    <div className="absolute inset-2 flex items-center justify-center pointer-events-none z-0">
+                                        <svg viewBox="0 0 200 400" className="w-full h-full" style={{ opacity: 1 }}>
                                             {/* Cabeza */}
-                                            <circle cx="100" cy="55" r="30" fill="none" stroke="currentColor" strokeWidth="8" />
+                                            <circle cx="100" cy="55" r="30" fill="none" stroke="#94A3B8" strokeWidth="8" />
                                             {/* Cuerpo */}
-                                            <line x1="100" y1="85" x2="100" y2="210" stroke="currentColor" strokeWidth="8" strokeLinecap="round" />
+                                            <line x1="100" y1="85" x2="100" y2="210" stroke="#94A3B8" strokeWidth="8" strokeLinecap="round" />
                                             {/* Brazo izquierdo */}
-                                            <line x1="100" y1="120" x2="45" y2="175" stroke="currentColor" strokeWidth="8" strokeLinecap="round" />
+                                            <line x1="100" y1="120" x2="45" y2="175" stroke="#94A3B8" strokeWidth="8" strokeLinecap="round" />
                                             {/* Brazo derecho */}
-                                            <line x1="100" y1="120" x2="155" y2="175" stroke="currentColor" strokeWidth="8" strokeLinecap="round" />
+                                            <line x1="100" y1="120" x2="155" y2="175" stroke="#94A3B8" strokeWidth="8" strokeLinecap="round" />
                                             {/* Pierna izquierda */}
-                                            <line x1="100" y1="210" x2="60" y2="320" stroke="currentColor" strokeWidth="8" strokeLinecap="round" />
+                                            <line x1="100" y1="210" x2="60" y2="320" stroke="#94A3B8" strokeWidth="8" strokeLinecap="round" />
                                             {/* Pierna derecha */}
-                                            <line x1="100" y1="210" x2="140" y2="320" stroke="currentColor" strokeWidth="8" strokeLinecap="round" />
+                                            <line x1="100" y1="210" x2="140" y2="320" stroke="#94A3B8" strokeWidth="8" strokeLinecap="round" />
                                         </svg>
                                     </div>
 
